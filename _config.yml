@@ -1,0 +1,31 @@
+title: "中文古籍編目指南"
+subtitle: "Chinese Rare Book Cataloging Guidelines"
+description: "A bilingual demonstration of a reference manual for Chinese rare book cataloging in North America."
+locale: en
+url: "https://yishan-png.github.io"
+baseurl: /cgcrb
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: default
+plugins:
+  - jekyll-include-cache
+markdown: kramdown
+collections:
+  zh:
+    output: false
+  en:
+    output: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      classes: wide
+exclude:
+  - AGENTS.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - vendor
+  - source
+  - original-documents
+  - mock-preview.png

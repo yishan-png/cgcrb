@@ -1,0 +1,21 @@
+<aside class="manual-sidebar" aria-label="Guideline contents">
+  <details class="contents-disclosure" open>
+    <summary>Contents <span lang="zh-Hant">目錄</span></summary>
+    <nav class="contents-navigation" aria-label="Chapters">
+      <a class="overview-link {% if page.url == '/' %}is-current{% endif %}" href="{{ '/' | relative_url }}">About this guideline <span>關於本指南</span></a>
+      <p class="nav-label">THE GUIDELINES <span>指南正文</span></p>
+      {% for chapter in site.data.navigation.chapters %}
+      <div class="chapter-navigation {% if page.chapter == chapter.number %}is-active{% endif %}">
+        <a class="chapter-link" href="{{ chapter.url | relative_url }}" {% if page.chapter == chapter.number %}aria-current="page"{% endif %}>
+          <span class="chapter-index">{{ chapter.number }}</span><span><span lang="zh-Hant">{{ chapter.title_zh }}</span><span class="chapter-english">{{ chapter.title_en }}</span></span>
+        </a>
+        {% if page.chapter == chapter.number %}<ul class="section-links">{% for section in chapter.sections %}<li><a href="#{{ section.anchor }}">{{ section.title }}</a></li>{% endfor %}</ul>{% endif %}
+      </div>
+      {% endfor %}
+      <p class="nav-label">REFERENCE <span>參考資料</span></p>
+      <a class="reference-link" href="{{ '/glossary/' | relative_url }}">Terminology <span>中英詞彙</span></a>
+      <a class="reference-link" href="{{ '/about/' | relative_url }}">Using this mock site <span>使用說明</span></a>
+    </nav>
+  </details>
+  <div class="sidebar-note"><span class="status-dot"></span> Demonstration edition<p>Placeholder content throughout.<br><span lang="zh-Hant">全站內容均為示例。</span></p></div>
+</aside>

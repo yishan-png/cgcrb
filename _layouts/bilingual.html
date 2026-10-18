@@ -1,0 +1,26 @@
+---
+layout: single
+---
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Guidelines</a><span>/</span><span>Chapter {{ page.chapter }}</span></nav>
+<header class="chapter-heading">
+  <p class="eyebrow">CHAPTER {{ page.chapter }} <span lang="zh-Hant">第{{ page.chapter }}章</span></p>
+  <h1><span lang="zh-Hant">{{ page.title_zh }}</span><span class="english-heading">{{ page.title_en }}</span></h1>
+  <p class="chapter-deck">{{ page.description }}</p>
+</header>
+<div class="demo-notice"><span class="notice-mark" aria-hidden="true">i</span><p><strong>Demonstration content / 示例內容</strong> These passages show the layout only; they are not cataloging instructions.</p></div>
+<div class="reader-tools"><span>PARALLEL TEXT <span lang="zh-Hant">中英對照</span></span><button class="print-button" type="button" hidden>Print this section <span aria-hidden="true">↗</span></button></div>
+<div class="column-labels" aria-hidden="true"><span>繁體中文 <small>TRADITIONAL CHINESE</small></span><span>English <small>英文</small></span></div>
+{{ content }}
+{% for rule in page.rules %}
+  {% assign zh = site.zh | where: "rule_id", rule.id | first %}
+  {% assign en = site.en | where: "rule_id", rule.id | first %}
+  <section class="paired-rule rule-level-{{ rule.level }}" id="{{ rule.id }}">
+    {% assign heading_level = rule.level %}
+    <h{{ heading_level }} class="rule-heading"><a class="rule-number" href="#{{ rule.id }}" aria-label="Permanent link to {{ rule.number }}">{{ rule.number }}</a><span><span lang="zh-Hant">{{ zh.title }}</span><span class="heading-divider">/</span><span lang="en">{{ en.title }}</span></span></h{{ heading_level }}>
+    <div class="bilingual-row"><div class="language-column" lang="zh-Hant"><span class="mobile-language">中文</span>{{ zh.content | markdownify }}</div><div class="language-column" lang="en"><span class="mobile-language">English</span>{{ en.content | markdownify }}</div></div>
+  </section>
+{% endfor %}
+<nav class="page-pagination" aria-label="Section navigation">
+  <a href="{{ page.previous_url | default: '/' | relative_url }}"><small>← PREVIOUS</small><span>{{ page.previous_title | default: 'Overview / 概覽' }}</span></a>
+  <a href="{{ page.next_url | default: '/glossary/' | relative_url }}"><small>NEXT →</small><span>{{ page.next_title | default: 'Terminology / 中英詞彙' }}</span></a>
+</nav>

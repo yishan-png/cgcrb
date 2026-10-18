@@ -1,0 +1,17 @@
+---
+layout: null
+---
+[
+{% assign emitted = false %}
+{% assign sections = site.pages | where: "layout", "bilingual" | sort: "chapter" %}
+{% for section in sections %}
+{% for rule in section.rules %}
+{% assign zh = site.zh | where: "rule_id", rule.id | first %}
+{% assign en = site.en | where: "rule_id", rule.id | first %}
+{% capture rule_url %}{{ section.url | relative_url }}#{{ rule.id }}{% endcapture %}
+{% if emitted %},{% endif %}
+{"id":{{ rule.id | jsonify }},"number":{{ rule.number | jsonify }},"zh_title":{{ zh.title | jsonify }},"en_title":{{ en.title | jsonify }},"zh_text":{{ zh.content | markdownify | strip_html | normalize_whitespace | jsonify }},"en_text":{{ en.content | markdownify | strip_html | normalize_whitespace | jsonify }},"url":{{ rule_url | jsonify }}}
+{% assign emitted = true %}
+{% endfor %}
+{% endfor %}
+]

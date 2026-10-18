@@ -1,0 +1,12 @@
+<header class="site-header">
+  <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="CGCRB home">
+    <span class="brand-seal" lang="zh-Hant" aria-hidden="true">書</span>
+    <span><strong>CGCRB</strong><span class="brand-subtitle">中文古籍編目指南</span></span>
+  </a>
+  <nav id="site-nav" class="top-navigation" aria-label="Primary navigation">
+    <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Overview <span lang="zh-Hant">概覽</span></a>
+    <a href="{{ '/guideline/general/' | relative_url }}" {% if page.chapter %}aria-current="true"{% endif %}>Guidelines <span lang="zh-Hant">指南</span></a>
+    <a href="{{ '/glossary/' | relative_url }}" {% if page.url == '/glossary/' %}aria-current="page"{% endif %}>Glossary <span lang="zh-Hant">詞彙</span></a>
+    <a class="search-link" href="{{ '/search/' | relative_url }}" aria-label="Search / 搜尋"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>Search</span></a>
+  </nav>
+</header>

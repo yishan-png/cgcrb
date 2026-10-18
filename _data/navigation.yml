@@ -1,0 +1,31 @@
+chapters:
+  - number: "01"
+    title_zh: 一般原則
+    title_en: General principles
+    url: /guideline/general/
+    summary: Scope, sources, and the foundations of description.
+    sections:
+      - title: "1.1 適用範圍 / Scope"
+        anchor: section-scope
+      - title: "1.2 著錄原則 / Description"
+        anchor: section-description
+  - number: "02"
+    title_zh: 題名與責任者
+    title_en: Title and responsibility
+    url: /guideline/title/
+    summary: Titles, parallel titles, and statements of responsibility.
+    sections:
+      - title: "2.1 題名 / Title"
+        anchor: section-title
+      - title: "2.2 責任者 / Responsibility"
+        anchor: section-responsibility
+  - number: "03"
+    title_zh: 版本與刊印
+    title_en: Edition and publication
+    url: /guideline/edition/
+    summary: Edition statements, publication details, and dates.
+    sections:
+      - title: "3.1 版本 / Edition"
+        anchor: section-edition
+      - title: "3.2 刊印 / Publication"
+        anchor: section-publication

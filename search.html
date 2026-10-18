@@ -1,0 +1,16 @@
+---
+layout: single
+title: "Search / 搜尋"
+permalink: /search/
+---
+<p class="eyebrow">FIND A PASSAGE <span lang="zh-Hant">查找條文</span></p>
+<h1 class="simple-title" lang="zh-Hant">搜尋指南</h1>
+<p class="simple-subtitle">Search the guidelines</p>
+<div class="demo-notice"><span class="notice-mark" aria-hidden="true">i</span><p><strong>Demonstration index</strong> Search covers the sample guideline passages in both languages.</p></div>
+<form class="search-form" data-search-form data-index-url="{{ '/search-index.json' | relative_url }}" role="search">
+  <label for="query">Chinese, English, or a rule number / 中文、英文或規則編號</label>
+  <div class="search-control"><input id="query" name="q" type="search" placeholder="e.g. 題名, title, 1.1.1" autocomplete="off"><button type="submit">Search</button></div>
+</form>
+<p class="search-status" role="status" aria-live="polite" data-search-status>Try “sources”, “題名”, or “1.1.1” to explore the sample text.</p>
+<div data-search-results></div>
+<noscript><p>Search requires JavaScript. You can read every chapter using the <a href="{{ '/' | relative_url }}">table of contents / 目錄</a>.</p></noscript>

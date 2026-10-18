@@ -1,0 +1,22 @@
+---
+layout: single
+title: "Overview / 概覽"
+---
+<header class="overview-heading">
+  <p class="eyebrow">A BILINGUAL REFERENCE <span lang="zh-Hant">中英雙語參考指南</span></p>
+  <h1 lang="zh-Hant">中文古籍編目指南</h1>
+  <p class="overview-english-title">Chinese Rare Book<br>Cataloging Guidelines</p>
+  <div class="title-rule"></div>
+  <p class="overview-intro">A shared reference for describing Chinese rare books<br class="desktop-break"> in North American collections.</p>
+  <p class="overview-intro-zh" lang="zh-Hant">為北美館藏中文古籍提供清晰、連貫的雙語編目參考。</p>
+  <div class="hero-actions"><a class="primary-link" href="{{ '/guideline/general/' | relative_url }}">Explore the guidelines <span lang="zh-Hant">閱讀指南</span><span aria-hidden="true">→</span></a><a class="quiet-link" href="{{ '/about/' | relative_url }}">About this project ↗</a></div>
+</header>
+<div class="demo-notice"><span class="notice-mark" aria-hidden="true">i</span><p><strong>A working mock / 網站示例</strong> All text is illustrative. The final Chinese and English guidelines will replace these placeholders.</p></div>
+<section class="overview-about" aria-labelledby="about-heading">
+  <div class="section-topline"><h2 id="about-heading">One guideline, two languages <span lang="zh-Hant">一份指南，兩種語言</span></h2><span class="small-index">01—03</span></div>
+  <div class="bilingual-row"><div class="language-column" lang="zh-Hant"><p>本示例展示中文與英文並列的閱讀方式。每一條規則均與對應譯文排列於同一行，方便讀者比較術語、說明與範例。請從下方目錄或左側導覽開始閱讀。</p></div><div class="language-column" lang="en"><p>This demonstration places Chinese and English side by side. Each numbered rule stays aligned with its counterpart, making terminology, explanations, and examples easy to compare. Begin with the contents below or use the chapter navigation.</p></div></div>
+</section>
+<section class="chapter-directory" aria-labelledby="directory-heading"><div class="section-topline"><h2 id="directory-heading">The guidelines <span lang="zh-Hant">指南目錄</span></h2><span class="small-index">3 SAMPLE CHAPTERS</span></div>
+{% for chapter in site.data.navigation.chapters %}<a class="directory-row" href="{{ chapter.url | relative_url }}"><span class="directory-number">{{ chapter.number }}</span><span class="directory-title"><strong lang="zh-Hant">{{ chapter.title_zh }}</strong><span>{{ chapter.title_en }}</span></span><span class="directory-summary">{{ chapter.summary }}</span><span class="directory-arrow" aria-hidden="true">↗</span></a>{% endfor %}
+</section>
+<aside class="hierarchy-key"><span class="eyebrow">HOW THE TEXT IS ORGANIZED</span><p><span>1 <strong>Chapter</strong></span><i>→</i><span>1.1 <strong>Section</strong></span><i>→</i><span>1.1.1 <strong>Rule</strong></span><i>→</i><span>1.1.1.1 <strong>Subrule</strong></span></p><span lang="zh-Hant">章 → 節 → 規則 → 子規則</span></aside>
